@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+$primary_cyan: hsl(185, 75%, 39%);
+$primary_blue: hsl(229, 23%, 23%);
+$primar_grey: hsl(227, 10%, 46%);
+$neutral_grey:hsl(0, 0%, 59%);
+
+$weight_primary: 400;
+$weight_secondary: 700;
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: $primary_cyan;
+    background-image: url(../images/bg-pattern-bottom.svg),url(../images/bg-pattern-top.svg);
+    background-repeat:no-repeat;
+    background-position: top 50vh left 50vw, bottom 50vh right 51vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    background: white;
+    width: 350px;
+    height: 375px;
+    border-radius: 15px;
+    transition: all .3s ease-in-out;
+    &:hover {
+		box-shadow: 0 10px 20px 10px rgba(black, .2);
+	}
+    &_top{
+     img{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        width: 100%;
+     }
+    
+    }
+    &_middle{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        img{
+            border-radius:50%;
+            border: 5px solid white;
+            margin-top: -3.7rem;
+            z-index:1;
+        }
+        .ring{
+            position:absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color:  #91eae4;
+            z-index: 0;
+            top: 37.9%;
+            -webkit-animation: pulse 1.5s infinite;  
+        }
+        h1{
+            font-size: 1.1rem;
+            color: $primary_blue;
+            margin-top: 1.2rem;
+        }
+        span{
+            color: $neutral_grey;
+            font-weight: $weight_primary;
+        }
+        p{
+            margin-top: 0.9rem;
+            font-size: 0.9rem;
+            color: $neutral_grey;
+        }
+    }
+    &_bottom{
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+        margin-top: 1.7rem;
+        border-top: 1px solid #EEEEEE;
+        padding: 1rem 0;
+        .stats{
+            padding-top: 0.5rem;
+            h1{
+                font-size: 1.1rem;
+                padding: 0.3rem 0;
+                color: $primary_blue;
+            }
+            p{
+                font-size: 0.6rem;
+                color: $neutral_grey;
+                letter-spacing: 0.1rem;
+            }
+        }
+    }
+}
+@-webkit-keyframes pulse {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    23%{
+        transform: scale(0.3);
+        opacity: 0.5;
+    }
+    70%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.4);
+        opacity: 0;
+    }
+  }
+@media screen and (max-width: 375px){
+    .card_middle{
+        .ring{
+            top:36.9%;
+        }
+    }
+}
